@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b>điểm Vật lý</b><input type="text" id="a1">
+<br>
+<b>điểm Hóa Học</b><input type="text" id="a2">
+<br>
+<b>điểm Sinh Học</b><input type="text" id="a3">
+<br>
+<button id="a4" onclick="tong_diem()">Tổng Điểm</button>
+<input type="text" id="a5">
+</body>
+</html>
+<script>
+    function tong_diem(){
+        let a=+document.getElementById('a1').value
+        let b=+document.getElementById('a2').value
+        let c=+document.getElementById('a3').value
+        document.getElementById('a5').value=(a+b+c)/3;
+    }
+</script>
