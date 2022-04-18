@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="display" border="1">
+
+</table>
+</body>
+</html>
+<script>
+    let str = "";
+    for (let i = 2; i <10; i++) {
+        str += "<tr>"
+        for (let j = 2; j < 10; j++) {
+
+            str += "<td>"+j+"x"+i+"="+(i*j)+"</td>"
+        }
+        str += "</tr>"
+    }
+    document.getElementById("display").innerHTML=str
+
+</script>
