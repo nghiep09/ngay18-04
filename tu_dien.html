@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>từ điển</title>
+</head>
+<body>
+<script>
+    let x = 0;
+    let array = ["hello", "good", "bye", "baby"];
+    let array2=["xin chào", "tốt", "tạm biệt", "em bé"];
+
+    function dich_tieng_anh() {
+        let keyword= prompt("nhập từ cần tìm");
+        for(let i=0;i<array.length;i++){
+            if(array[i]==keyword)return i;
+        }
+        return -1;
+    }
+    function translate(){
+        let i=dich_tieng_anh();
+        if(i==-1){
+            alert("không tìm thấy");
+        }
+        else{
+            alert("từ tiếng việt tương ứng là" + array2[i]);
+        }
+    }
+    translate();
+</script>
+
+</body>
+</html>

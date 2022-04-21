@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="a1">
+<input type="button" id="a2" value="Add" onclick="Adda()"/>
+<input type="button" id="a3" value="Display" onclick="Dsp()"/>
+<div id="result"></div>
+<script>
+    let x=0;
+    let array=Array();
+    function Adda() {
+        array[x] = document.getElementById("a1").value;
+        alert("Element: " + array[x] + " Added at index " + x);
+        x++;
+        document.getElementById("a1").value = "";
+
+        document.getElementById("result").innerHTML ='['+e+']';
+    }
+</script>
+</body>
+</html>

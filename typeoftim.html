@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Faking Textarea on Typing</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <script>
+            let a = [], n = "";
+            a[1] = 'T';
+            a[2] = 'Ô';
+            a[3] = 'I';
+            a[4] = ' ';
+            a[5] = 'Đ';
+            a[6] = 'É';
+            a[7] = 'O';
+            a[8] = ' ';
+            a[9] = 'H';
+            a[10] = 'I';
+            a[11] = 'Ể';
+            a[12] = 'U';
+            a[13] = ' ';
+            a[14] = 'G';
+            a[15] = 'Ì';
+            a[16] = '!';
+            a[17] = '!';
+            a[18] = ' ';
+            function typeTextarea() {
+                let t = document.f.txt.value;
+                let j = t.length;
+                if (j > 0) {
+                    for (let i = 1; i <= j; i++) {
+                        n = n + a[i];
+                        if (i == 18) {
+                            document.f.txt.value = "";
+                            n = "";
+                        }
+                    }
+                }
+                document.f.txt.value = n;
+                n = "";
+                setTimeout("typeTextarea()", 1);
+                //return false;
+            }
+        </script>
+    </head>
+ <body>
+<center>
+    <h2>Type anthing slowly</h2>
+    <form name="f">
+        <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+    </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm số lớn thứ 2 trong mảng</title>
+</head>
+<body>
+<script>
+    let arr = [1, 7, 6, 8, 7, 8, 6, 2]
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    let max2 = arr[0]
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max2 && arr[i] < max) {
+            max2 = arr[i]
+        }
+    }
+    console.log(max)
+    console.log(max2)
+
+</script>
+</body>
+</html>
