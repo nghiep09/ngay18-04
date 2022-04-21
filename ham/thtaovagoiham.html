@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function array(comhere) {
+        let retus = "";
+        if (comhere) {
+            retus = "chào người bạn mới đến";
+        } else {
+            retus = "vẫn chào người bạn mới đến"
+        }
+        return retus;
+    }
+
+    let confirmAnswer = confirm("Shall we play a game?");
+    let theAnswer = array(confirmAnswer);
+    alert(theAnswer)
+
+
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let a=prompt("nhập số")
+    let check =true;
+    function snt(n) {
+    for (let i=2;i<=n/2;i++){
+        if(n%i==0){
+          document.write(n+"không là số nguyên tố");
+            check=false;
+            break;
+        }
+    }
+    if(check){
+      document.write(n+"là số nguyên tố");
+    }
+    }
+    snt(a)
+</script>
