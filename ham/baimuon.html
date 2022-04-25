@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ktrasnt(num) {
+        let check = true
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                check = false
+                break;}
+        } if (check) return num
+    }
+    function nhapkhoangvainsnt(num2) {
+        for (let j = 2; j < num2; j++) {
+            ktrasnt(j)
+            if (ktrasnt(j)) {
+                document.write(j + ',')
+            }
+        }
+    }
+    a=parseInt(prompt('Nhập khoảng cần in snt: '))
+    nhapkhoangvainsnt(a)
+</script>
+</body>
+</html>
