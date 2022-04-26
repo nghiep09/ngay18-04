@@ -10,15 +10,15 @@
     <h4>Type a value in the Fahrenheit field to conver</h4>
     <p><label>Fahrenheit</label>
         <input type="number" id="a1" placeholder="Fahrenheit"
-               oninput="nhiet_do_vao(val)"
-               onchange="nhiet_do_vao(val)">
+               oninput="nhiet_do_vao(this.value)"
+               onchange="nhiet_do_vao(this.value)">
     </p>
     <p>Celcius:<span id="a2"></span></p>
 </form>
 <script>
-    function nhiet_do_vao(valnum) {
-        valnum = parseFloat(valnum);
-        docuemnt.getElementById("a2").innerHTML = (valnum - 32) / 1.8;
+    function nhiet_do_vao(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("a2").innerHTML = (valNum - 32) / 1.8;
     }
 </script>
 

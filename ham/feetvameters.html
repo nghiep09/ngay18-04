@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h1>Feet và Meter</h1>
+    <p><label>foot</label>
+        <input type="number" id="a1" placeholder="foots"
+               oninput="footToMeter(this.value)">
+
+    </p>
+    <p>meter:
+    <input type="number" id="a3" placeholder="meters"
+           oninput="meterToFoot(this.value)">
+    </p>
+    hiển thị: <input type="text" id="a2" oninput="meterToFoot(this.value)" >
+</form>
+<script>
+    function footToMeter(foot) {
+        return 0.305*foot
+    }
+    function meterToFoot(meter){
+        return 3.279*meter
+    }
+
+
+
+</script>
+</body>
+</html>
+

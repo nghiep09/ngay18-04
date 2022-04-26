@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class FlashLamp {
+        status;
+        battery;
+
+        constructor(status, battery) {
+            this.status = status;
+            this.battery = battery;
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+
+        turnOff() {
+            this.status = false;
+        }
+
+        light() {
+            this.battery.downEnergy();
+        }
+    }
+
+    class Battery {
+        energy;
+
+        constructor(energy) {
+            this.energy = energy;
+        }
+
+        downEnergy() {
+            this.energy--
+        }
+    }
+
+    let pincontho = new Battery(10)
+    let pinTQ = new Battery(5)
+    let den1 = new FlashLamp(false, pinTQ);
+    den1.turnOn(1);
+    den1.light();
+    den1.turnOff();
+    console.log(den1)
+</script>

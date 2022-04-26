@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quản lý học viên codegym</title>
+    <style>
+        #a1{
+
+           width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div align="center" >
+    <h1>Học Viên CodeGym</h1>
+    tên học viên: <input placeholder="tên học viên" id="name" name="adc">
+    <br>
+    năm sinh: <input placeholder="năm sinh" id="age">
+    <br>
+    giới tính: <input placeholder="giới tính" id="gioitinh">
+    <br>
+    sdt: <input placeholder="sdt" id="sdt">
+    <br>
+    email: <input placeholder="email" id="email">
+    <br>
+    <button onclick="create()">Add</button>
+    <button onclick="saveEdit()">Edit</button>
+    <br>
+    <br>
+    <table id="display" style="width: 50%" text-align="center" >
+
+    </table>
+</div>
+</body>
+</html>
+<script>
+    class hocvien{
+        ten_hoc_vien;
+        nam_sinh;
+        gioi_tinh;
+        sdt;
+        email;
+        constructor(ten_hoc_vien,nam_sinh,gioi_tinh,sdt,email) {
+            this.ten_hoc_vien=ten_hoc_vien;
+            this.nam_sinh=nam_sinh;
+            this.gioi_tinh=gioi_tinh;
+            this.sdt=sdt;
+            this.email=email;
+        }
+    }
+    let products=[new hocvien("Nghiep",1995,"nam",91433333,"anhnghiepdeptrai22@gmail.com")]
+    function create(){
+        let ten_hoc_vien=document.getElementById('name').value
+        let nam_sinh=document.getElementById('age').value
+        let gioi_tinh=document.getElementById('gioitinh').value
+        let sdt=document.getElementById('sdt').value
+        let email=document.getElementById('email').value
+        products.push(new hocvien(ten_hoc_vien,nam_sinh,gioi_tinh,sdt,email));
+        console.log(products)
+        show();
+    }
+    function show(){
+        let str="";
+        for(let i=0; i<products.length; i++){
+            str += "<tr>"
+            str += `<td>${i+1}</td>`
+            str += `<td>${products[i].ten_hoc_vien}</td>`
+            str += `<td>${products[i].nam_sinh}</td>`
+            str += `<td>${products[i].gioi_tinh}</td>`
+            str += `<td id="a1">${products[i].sdt}</td>`
+            str += `<td>${products[i].email}</td>`
+            str += `<td><button onclick="showEdit(${i})">Edit</button></td>`
+            str += `<td><button onclick="del(${i})">delete</button></td>`
+            str += "</tr>"
+        }
+        document.getElementById('display').innerHTML=str;
+    }
+    let indexEdit=-1;
+    function showEdit(index){
+        document.getElementById('name').value=products[index].ten_hoc_vien;
+        document.getElementById('age').value=products[index].nam_sinh;
+        document.getElementById('gioitinh').value=products[index].gioi_tinh;
+        document.getElementById('sdt').value=products[index].sdt;
+        document.getElementById('email').value=products[index].email;
+        indexEdit=index;
+    }
+    function saveEdit(){
+        let ten_hoc_vien=document.getElementById('name').value;
+        let nam_sinh=document.getElementById('age').value;
+        let gioi_tinh=document.getElementById('gioitinh').value;
+        let sdt=document.getElementById('sdt').value;
+        let email=document.getElementById('email').value;
+
+        products[indexEdit]=new hocvien(ten_hoc_vien,nam_sinh,gioi_tinh,sdt,email);
+        show();
+        indexEdit=-1;
+    }
+    function del(index){
+        products.splice(index,1);
+        show();
+    }
+        show();
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp Date</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let MyDate = function Date(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        this.getDay = function () {
+            return this.day
+        }
+        this.getMonth = function () {
+            return this.month
+        }
+        this.getYear = function () {
+            return this.year
+        }
+
+    }
+    let date= new MyDate(4,3,2022);
+
+    let day = date.getDay();
+
+    let month = date.getMonth();
+
+    let year = date.getYear();
+
+    alert(day +"/"+ month+"/"+ year);
+
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HuMan</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Human {
+        id;
+        name;
+        age;
+
+        constructor(id, name, age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+        say(str){
+            alert(str)
+        }
+
+    }
+
+    let nga = new Human(2345, "nga", 18);
+    nga.name= "ngoc"
+    alert(nga.name)
+    nga.age=19
+    alert(nga.age)
+    nga.say("abc")
+
+</script>
