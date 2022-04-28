@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let array = [3, 2, 0, 6, 8];
+
+    function Run(value, index) {
+        for (let i = array.length; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = value;
+    }
+
+    Run(3, 2);
+    console.log(array)
+</script>

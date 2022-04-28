@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>công tắc và đèn pin</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class ElectricLamp {
+        status
+        constructor(status) {
+            this.status = status;
+        }
+        turnOff() {
+            this.status = false;
+        }
+        turnOn() {
+            this.status = true;
+        }
+    }
+    class SwitchButton {
+        status;
+        lamp;
+        constructor(status,lamp) {
+            this.status=status
+            this.lamp=lamp
+        }
+        connectToLamp(lamp) {
+            this.lamp = lamp;
+        }
+        switchOff() {
+            this.lamp.turnOff();
+        }
+        switchOn() {
+            this.lamp.turnOn();
+        }
+    }
+    let redLamp = new ElectricLamp(5);
+    let lampSwitch = new SwitchButton();
+    lampSwitch.connectToLamp(redLamp);
+    let count = 0;
+    while (count < 5) {
+        console.log(redLamp.status);
+        lampSwitch.switchOn();
+        console.log(redLamp.status);
+        lampSwitch.switchOff();
+        count++;
+    }
+</script>

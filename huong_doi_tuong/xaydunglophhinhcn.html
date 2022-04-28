@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng đối tượng hình chữ nhật</title>
+    <style>
+        #myCanvas{
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+<canvas  id="myCanvas" width="500px" height="500px" style="border: 1px solid #d3d3d3 ;"></canvas>
+</body>
+</html>
+<script>
+    class Rectangle{
+        dai;
+        rong;
+        x;
+        y;
+        constructor(dai,rong,x,y) {
+            this.dai=dai;
+            this.rong=rong;
+            this.x=x;
+            this.y=y;
+        }
+        getDai(){
+            return this.dai
+        }
+        getRong(){
+            return this.rong
+        }
+        getArena(){
+            return Math.floor(dai*rong);
+        }
+        getPerimeter(){
+            return Math.floor((dai+rong)*2);
+        }
+    }
+    let rectangle=new Rectangle(50,50,50,50);
+    let dai=rectangle.getDai();
+    let rong=rectangle.getRong();
+    let arena=rectangle.getArena();
+    let perimeter=rectangle.getPerimeter();
+    let ctx=document.getElementById("myCanvas").getContext("2d");
+    ctx.moveTo(50,50);
+    ctx.lineTo(50,200);
+    ctx.moveTo(50,200);
+    ctx.lineTo(200,200);
+    ctx.moveTo(200,200);
+    ctx.lineTo(200,50);
+    ctx.moveTo(200,50);
+    ctx.lineTo(50,50)
+    ctx.stroke();
+    alert("diện tích hcn"+(arena)+"chu vi hcn"+(perimeter))
+</script>
