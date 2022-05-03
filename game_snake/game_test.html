@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="score">0</p>
+<canvas id="gc" width="400px" height="400px">
+
+</canvas>
+
+</body>
+</html>
+<script type="text/javascript">
+    window.onload=function (){
+        canv=document.getElementById('gc');
+        ctx=canv.getContext('2d');
+        document.addEventListener("keydown", keyPush);
+        setInterval(game, 1000/15);
+    }
+
+</script>

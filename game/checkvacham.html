@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border: 1px solid"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    docReady();
+
+
+    class Object {
+        constructor(width, height, x, y, color) {
+            this.width = width;
+            this.height = height;
+            this.speedX = 0;
+            this.speedY = 0;
+            this.x = x;
+            this.y = y;
+            this.color = color;
+        }
+
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+            drawRec()
+        }
+
+        moveUp() {
+            this.y -= 20;
+            this.clearCanvas();
+            this.draw();
+        }
+
+        moveDown() {
+            this.y += 20;
+            this.clearCanvas();
+            this.draw();
+        }
+
+        moveRight() {
+            this.x += 20;
+            this.clearCanvas();
+            this.draw();
+        }
+
+        moveLeft() {
+            this.x -= 20;
+            this.clearCanvas();
+            this.draw();
+        }
+
+        clearCanvas() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, 500, 500);
+        }
+
+        check() {
+            let con1 = this.x + this.width >= 350 && this.x + this.width <= 280;
+            let con2 = this.y + this.height >= 350 && this.x + this.width <= 280;
+
+            if (con1 && con2) {
+                return true;
+            } else return false;
+        }
+
+        checkCircle(){
+            let x = Math.sqrt()
+        }
+    }
+
+    let object = new Object(50, 50, 50, 50, 'red');
+    object.draw();
+
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 38:
+                object.moveUp();
+                check()
+                break;
+            case 39:
+                object.moveRight();
+                check()
+
+                break;
+            case 40:
+                object.moveDown();
+                check()
+
+                break;
+            case 37:
+                object.moveLeft();
+                check()
+                break;
+
+        }
+    }
+
+    function drawRec() {
+        ctx.beginPath();
+        let x = 350;
+        let y = 350;
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(350, 350, 50, 50);
+        ctx.stroke();
+    }
+
+    function check() {
+        if (object.check()) {
+
+          alert("chạm")
+        }
+    }
+
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+
+
+</script>
+</html>

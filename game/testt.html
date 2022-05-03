@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>DO YOU LOVE ME?</h1>
+<button style="position: absolute; top: 55px; left: 20px">yes</button>
+<button id="h0" style="position: absolute; top: 55px; left: 80px" onmousemove="changer()">no</button>
+</body>
+</html>
+<script>
+    function changer(){
+        let h0=document.getElementById('h0');
+        h0.style.marginLeft= Math.random()*500+"px";
+        h0.style.marginTop= Math.random()*500+"px";
+    }
+</script>
