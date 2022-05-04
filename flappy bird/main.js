@@ -4,7 +4,7 @@ canvas.width = 600;
 canvas.height = 400;
 
 let spacePressed = false;
-let hue = 0;
+let colo = 0;
 let frame = 0;
 let score = 0;
 
@@ -24,7 +24,7 @@ function animate() {
         saveScore(score);
 
         alert("play again?")
-        ctx.drawImage(bang, bird.x, bird.y, 50, 50);
+        ctx.drawImage("", bird.x, bird.y, 50, 50);
         ctx.font = "40px sans-serif";
         ctx.fillStyle = "Red";
         ctx.fillText(
@@ -37,7 +37,7 @@ function animate() {
     }
 
     requestAnimationFrame(animate);
-    hue++;
+    colo++;
     frame++;
 }
 window.addEventListener("keydown", function (e) {
@@ -48,21 +48,24 @@ window.addEventListener("keyup", function (e) {
     if (e.code === "Space") spacePressed = false;
 });
 
- const ui_troi = new Image();
+ const imager = new Image();
 function handleCollision() {
     for (let i = 0; i < obstaclesArray.length; i++) {
         if ((bird.x < obstaclesArray[i].x + obstaclesArray[i].width) &&
-            (bird.x + bird.width + 15 > obstaclesArray[i].x) &&
+            (bird.x + bird.width  > obstaclesArray[i].x) &&
             ((bird.y < obstaclesArray[i].top) ||
-                (bird.y + bird.height > canvas.height - obstaclesArray[i].bottom)) || (bird.y + bird.height + 10 > canvas.height) || (bird.y + bird.height < 0)) {
-            ctx.drawImage(ui_troi, bird.x, bird.y, 50, 50);
+                (bird.y + bird.height > canvas.height - obstaclesArray[i].bottom))
+            || (bird.y + bird.height + 10 > canvas.height) || (bird.y + bird.height < 0)) {
+            ctx.drawImage(imager, bird.x, bird.y, 50, 50);
             ctx.font = "40px sans-serif";
             ctx.fillStyle = "Red";
             ctx.fillText(
                 "Game Over, Your Score is " + score,
                 50,
                 canvas.height / 2
+
             );
+            fly2.pause();
             return true;
         }
     }

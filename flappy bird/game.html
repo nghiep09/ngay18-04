@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background: black;
+        }
+        tbody{
+            border: 2px solid royalblue;
+        }
+        #a1{
+            background: lightgrey;
+        }
+    </style>
 </head>
 <body>
 <canvas id="canvas1"></canvas>
@@ -12,9 +23,9 @@
 <script src="main.js"></script>
 <table style="border: 1px;border-collapse: collapse">
     <tr>
-        <th>TOP SCORE</th>
+        <th id="a1">TOP 5</th>
     </tr>
-    <tbody id="draw" style="color: red;font-size: large;font-family: Arial">
+    <tbody id="draw" style="color: red;font-size: large;font-family: Arial" >
 
     </tbody>
 
@@ -29,6 +40,7 @@
         document.getElementById('draw').innerHTML +=name+": "+point
         document.getElementById('draw').innerHTML +='<br>'
     }
+
 </script>
 
 </body>

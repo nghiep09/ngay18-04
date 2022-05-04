@@ -1,11 +1,11 @@
 const obstaclesArray = [];
 class Obstacle {
     constructor() {
-        this.top = (Math.random() * canvas.height) / 3+50 ;
-        this.bottom = (Math.random() * canvas.height) / 3 +50;
+        this.top = (Math.random() * canvas.height) /3 + 50 ;
+        this.bottom = (Math.random() * canvas.height) /3 +50;
         this.x =500;
         this.width = 60;
-        this.color = "hsla(" + hue + ",100%,50%,1)";
+        this.color = "hsla(" + colo + ",100%,50%,1)";
         this.counted = false;
     }
     draw() {
@@ -23,22 +23,27 @@ class Obstacle {
 
 
     }
-        if(score>5){
-            this.x-=5
+        for (let k=0;k<score;k++){
+            this.x--;
 
         }
-        if(score>10){
-            this.x-=10
 
-        }
-        if(score>15){
-            this.x-=15
-
-        }
-        if(score>20){
-            this.x-=20
-
-        }
+        // if(score>5){
+        //     this.x-=5
+        //
+        // }
+        // if(score>10){
+        //     this.x-=6
+        //
+        // }
+        // if(score>15){
+        //     this.x-=7
+        //
+        // }
+        // if(score>20){
+        //     this.x-=8
+        //
+        // }
         this.draw();
     }
 }

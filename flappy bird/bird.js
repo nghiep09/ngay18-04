@@ -24,11 +24,14 @@ class Bird {
         ctx.drawImage(dragon,0,0,this.originalWidth,this.originalHeight,this.x,this.y,this.width*2,this.height*2)
     }
     flap() {
-        this.vy -= 2.2;
-        fly.play();
+        this.vy -= 3;
+        fly1.play();
+        fly2.play();
     }
 }
 let bird = new Bird();
-let fly =new Audio();
-fly.src ='sound/fly.mp3'
+let fly1 =new Audio();
+fly1.src ='sound/fly.mp3'
+let fly2= new Audio();
+fly2.src='sound/bet.mp3'
 
