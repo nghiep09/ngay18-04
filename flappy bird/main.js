@@ -17,14 +17,11 @@ function animate() {
     bird.update();
     bird.draw();
     ctx.font = "90px Georgia";
-    ctx.strokeText(score, 450, 70);
-    ctx.fillText(score, 450, 70);
+    ctx.strokeText(score, 50, 70);
+    ctx.fillText(score, 50, 70);
     handleCollision();
     if (handleCollision()){
         saveScore(score);
-
-        alert("play again?")
-        ctx.drawImage("", bird.x, bird.y, 50, 50);
         ctx.font = "40px sans-serif";
         ctx.fillStyle = "Red";
         ctx.fillText(
@@ -32,7 +29,9 @@ function animate() {
             50,
             canvas.height / 2
         );
-        window.location.reload()
+        // window.location.reload()
+        alert("play again?")
+
         return;
     }
 
@@ -48,14 +47,14 @@ window.addEventListener("keyup", function (e) {
     if (e.code === "Space") spacePressed = false;
 });
 
- const imager = new Image();
+  const imager = new Image();
 function handleCollision() {
     for (let i = 0; i < obstaclesArray.length; i++) {
         if ((bird.x < obstaclesArray[i].x + obstaclesArray[i].width) &&
             (bird.x + bird.width  > obstaclesArray[i].x) &&
             ((bird.y < obstaclesArray[i].top) ||
                 (bird.y + bird.height > canvas.height - obstaclesArray[i].bottom))
-            || (bird.y + bird.height + 10 > canvas.height) || (bird.y + bird.height < 0)) {
+            || (bird.y + bird.height > canvas.height) || (bird.y + bird.height < 0)) {
             ctx.drawImage(imager, bird.x, bird.y, 50, 50);
             ctx.font = "40px sans-serif";
             ctx.fillStyle = "Red";

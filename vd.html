@@ -6,15 +6,14 @@
 </head>
 <body>
 <script>
-    function oddNumbers() {
-        let arr = [];
-        for (let i = 1; i < 50; i+=2) {
-            arr.push(i);
+    let arr = [6, 2, 7, 8, 1]
+    let newArr = new Array(arr.length - 1)
+    for (let i = 0; i < newArr.length; i++) {
+        if (i < 3) {
+            newArr[i] = arr[i]
         }
-
-        console.log(arr);
     }
-    oddNumbers()
+    console.log(newArr);
 </script>
 </body>
 </html>

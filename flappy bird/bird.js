@@ -16,7 +16,6 @@ class Bird {
         this.y += this.weight;
         this.vy *= 0.7;
         this.y += this.vy;
-        // }
         if (spacePressed ) this.flap();
     }
     draw() {
