@@ -14,7 +14,7 @@ class Obstacle {
         ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom);
     }
     update() {
-        this.x -= 5;
+        this.x -= 1.5;
         if (!this.counted && this.x+this.width < bird.x+bird.width) {
             sco.play()
             score++;
@@ -23,27 +23,27 @@ class Obstacle {
 
 
     }
-        for (let k=0;k<score;k++){
-            this.x--;
+        // for (let k=0;k<score;k++){
+        //     this.x--;
+        //
+        // }
+
+        if(score>5){
+            this.x-=5
 
         }
+        if(score>10){
+            this.x-=10
 
-        // if(score>5){
-        //     this.x-=5
-        //
-        // }
-        // if(score>10){
-        //     this.x-=6
-        //
-        // }
-        // if(score>15){
-        //     this.x-=7
-        //
-        // }
-        // if(score>20){
-        //     this.x-=8
-        //
-        // }
+        }
+        if(score>15){
+            this.x-=15
+
+        }
+        if(score>20){
+            this.x-=20
+
+        }
         this.draw();
     }
 }
